@@ -7,9 +7,6 @@ My personal blog([About Me](https://github.com/ruheyun/yc-blog/issues/4)) using 
 ## 最近更新
 - [About Me](https://github.com/ruheyun/yc-blog/issues/4)--2026-05-12
 - [2026目标](https://github.com/ruheyun/yc-blog/issues/3)--2026-05-12
-## question
-
-- [About Me](https://github.com/ruheyun/yc-blog/issues/4)--2026-05-12
 ## 目标
 
 - [2026目标](https://github.com/ruheyun/yc-blog/issues/3)--2026-05-12
