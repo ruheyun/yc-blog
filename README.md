@@ -5,11 +5,11 @@ My personal blog([About Me](https://github.com/ruheyun/yc-blog/issues/4)) using 
 [RSS Feed](https://raw.githubusercontent.com/ruheyun/yc-blog/master/feed.xml)
 
 ## 最近更新
-- [测试](https://github.com/ruheyun/yc-blog/issues/4)--2026-05-12
+- [About Me](https://github.com/ruheyun/yc-blog/issues/4)--2026-05-12
 - [2026目标](https://github.com/ruheyun/yc-blog/issues/3)--2026-05-12
 ## question
 
-- [测试](https://github.com/ruheyun/yc-blog/issues/4)--2026-05-12
+- [About Me](https://github.com/ruheyun/yc-blog/issues/4)--2026-05-12
 ## 目标
 
 - [2026目标](https://github.com/ruheyun/yc-blog/issues/3)--2026-05-12
