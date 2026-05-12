@@ -1,7 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<feed xmlns="http://www.w3.org/2005/Atom"><id>https://github.com/ruheyun/yc-blog</id><title>RSS feed of ruheyun's yc-blog</title><updated>2026-05-12T13:45:31.883834+00:00</updated><author><name>ruheyun</name><email>ruheyun@users.noreply.github.com</email></author><link href="https://github.com/ruheyun/yc-blog"/><link href="https://raw.githubusercontent.com/ruheyun/yc-blog/master/feed.xml" rel="self"/><generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator><entry><id>https://github.com/ruheyun/yc-blog/issues/4</id><title>About</title><updated>2026-05-12T13:45:32.318919+00:00</updated><content type="html"><![CDATA[<p>I am Yunchao Zhao.</p>
+<feed xmlns="http://www.w3.org/2005/Atom"><id>https://github.com/ruheyun/yc-blog</id><title>RSS feed of ruheyun's yc-blog</title><updated>2026-05-12T13:47:48.221364+00:00</updated><author><name>ruheyun</name><email>ruheyun@users.noreply.github.com</email></author><link href="https://github.com/ruheyun/yc-blog"/><link href="https://raw.githubusercontent.com/ruheyun/yc-blog/master/feed.xml" rel="self"/><generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator><entry><id>https://github.com/ruheyun/yc-blog/issues/4</id><title>About</title><updated>2026-05-12T13:47:48.732480+00:00</updated><content type="html"><![CDATA[<h2>About the repository</h2>
+<p>This repository is forked from <a href="https://github.com/yihong0618/gitblog">yihong0618/gitblog</a>, a personal blog system powered by GitHub Issues and Actions.</p>
+<blockquote>
+<p>🙏 Thanks to @yihong0618 for the awesome project!</p>
+</blockquote>
+<h2>About me</h2>
+<p>I am Yunchao Zhao.</p>
 <p>I am a M.S. candidate in Computer Science and Technology at Henan University of Economics and Law. My research interests include Artificial Intelligence, Machine Learning, and Data Security, with a focus on Diffusion Models and Differential Privacy.</p>
-]]></content><link href="https://github.com/ruheyun/yc-blog/issues/4"/><category term="About"/><published>2026-05-12T13:11:57+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/3</id><title>2026目标</title><updated>2026-05-12T13:45:32.484342+00:00</updated><content type="html"><![CDATA[<ul>
+]]></content><link href="https://github.com/ruheyun/yc-blog/issues/4"/><category term="About"/><published>2026-05-12T13:11:57+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/3</id><title>2026目标</title><updated>2026-05-12T13:47:48.924836+00:00</updated><content type="html"><![CDATA[<ul>
 <li>至少看100篇论文</li>
 <li>完成小论文，并投稿</li>
 <li>过六级</li>
