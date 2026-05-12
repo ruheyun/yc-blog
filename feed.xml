@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom"><id>https://github.com/ruheyun/yc-blog</id><title>RSS feed of ruheyun's yc-blog</title><updated>2026-05-12T13:12:21.293671+00:00</updated><author><name>ruheyun</name><email>ruheyun@users.noreply.github.com</email></author><link href="https://github.com/ruheyun/yc-blog"/><link href="https://raw.githubusercontent.com/ruheyun/yc-blog/master/feed.xml" rel="self"/><generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator><entry><id>https://github.com/ruheyun/yc-blog/issues/4</id><title>测试</title><updated>2026-05-12T13:12:21.872673+00:00</updated><content type="html"><![CDATA[<p>可以</p>
+]]></content><link href="https://github.com/ruheyun/yc-blog/issues/4"/><category term="question"/><published>2026-05-12T13:11:57+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/3</id><title>2026目标</title><updated>2026-05-12T13:12:22.111234+00:00</updated><content type="html"><![CDATA[<ul>
+<li>至少看100篇论文</li>
+<li>完成小论文，并投稿</li>
+<li>过六级</li>
+</ul>
+]]></content><link href="https://github.com/ruheyun/yc-blog/issues/3"/><category term="目标"/><published>2026-05-12T13:00:45+00:00</published></entry></feed>
