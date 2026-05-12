@@ -1,5 +1,5 @@
 ## [yc-blog](https://ruheyun.github.io/yc-blog)
-My personal blog([About Me](https://github.com/ruheyun/yc-blog/issues/4)) using issues and GitHub Actions (随意转载，无需署名) [RSS Feed](https://raw.githubusercontent.com/ruheyun/yc-blog/master/feed.xml)
+My personal blog([About](https://github.com/ruheyun/yc-blog/issues/4)) using issues and GitHub Actions (Free to share, no attribution required.) [RSS Feed](https://raw.githubusercontent.com/ruheyun/yc-blog/master/feed.xml)
 
 ## 最近更新
 - [About Me](https://github.com/ruheyun/yc-blog/issues/4)--2026-05-12
