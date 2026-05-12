@@ -1,3 +1,47 @@
+# name: Generate GitBlog README
+
+# on:
+#   workflow_dispatch:
+#   issues:
+#     types: [opened, edited]
+#   issue_comment:
+#     types: [created, edited]
+#   push:
+#     branches:
+#       - main
+#     paths:
+#       - main.py
+
+# jobs:
+#   sync:
+#     name: Generate README
+#     runs-on: ubuntu-latest
+#     if: github.repository_owner_id == github.event.issue.user.id || github.event_name == 'push'
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v4
+#       - name: Set up Python
+#         uses: actions/setup-python@v5
+#         with:
+#           python-version: 3.13
+#           cache: pip
+#           cache-dependency-path: "requirements.txt"
+
+#       - name: Install dependencies
+#         run: |
+#           pip install -r requirements.txt
+
+#       - name: Generate new md
+#         run: |
+#           python main.py ${{ secrets.G_T }} ${{ github.repository }} --issue_number '${{ github.event.issue.number }}'
+
+#       - name: Push README
+#         run: |
+#           git config --local user.email "action@github.com"
+#           git config --local user.name "GitHub Action"
+#           git add BACKUP/*.md
+#           git commit -a -m 'update new blog' || echo "nothing to commit"
+#           git push || echo "nothing to push"
 name: Generate GitBlog README
 
 on:
@@ -12,6 +56,9 @@ on:
     paths:
       - main.py
 
+permissions:
+  contents: write
+
 jobs:
   sync:
     name: Generate README
@@ -20,6 +67,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -32,6 +80,9 @@ jobs:
           pip install -r requirements.txt
 
       - name: Generate new md
+        env:
+          GITHUB_NAME: ${{ github.repository_owner }}
+          GITHUB_EMAIL: ${{ github.repository_owner }}@users.noreply.github.com
         run: |
           python main.py ${{ secrets.G_T }} ${{ github.repository }} --issue_number '${{ github.event.issue.number }}'
 
@@ -39,6 +90,12 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add BACKUP/*.md
-          git commit -a -m 'update new blog' || echo "nothing to commit"
-          git push || echo "nothing to push"
+          
+          # 添加所有生成的文件
+          [ -f README.md ] && git add README.md
+          [ -f feed.xml ] && git add feed.xml
+          [ -d BACKUP ] && git add BACKUP/*.md
+          
+          # 只有有改动时才提交
+          git diff --quiet && git diff --staged --quiet || git commit -m "chore: auto-generate blog files [skip ci]"
+          git push
