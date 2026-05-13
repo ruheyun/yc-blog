@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<feed xmlns="http://www.w3.org/2005/Atom"><id>https://github.com/ruheyun/yc-blog</id><title>RSS feed of ruheyun's yc-blog</title><updated>2026-05-13T09:43:40.232973+00:00</updated><author><name>ruheyun</name><email>ruheyun@users.noreply.github.com</email></author><link href="https://github.com/ruheyun/yc-blog"/><link href="https://raw.githubusercontent.com/ruheyun/yc-blog/master/feed.xml" rel="self"/><generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator><entry><id>https://github.com/ruheyun/yc-blog/issues/7</id><title>Less Random, More Private: What is the Optimal Subsampling  Scheme for DP-SGD?</title><updated>2026-05-13T09:43:40.767167+00:00</updated><content type="html"><![CDATA[<h2>作者信息</h2>
+<feed xmlns="http://www.w3.org/2005/Atom"><id>https://github.com/ruheyun/yc-blog</id><title>RSS feed of ruheyun's yc-blog</title><updated>2026-05-13T11:29:43.610266+00:00</updated><author><name>ruheyun</name><email>ruheyun@users.noreply.github.com</email></author><link href="https://github.com/ruheyun/yc-blog"/><link href="https://raw.githubusercontent.com/ruheyun/yc-blog/master/feed.xml" rel="self"/><generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator><entry><id>https://github.com/ruheyun/yc-blog/issues/7</id><title>Less Random, More Private: What is the Optimal Subsampling  Scheme for DP-SGD?</title><updated>2026-05-13T11:29:44.013664+00:00</updated><content type="html"><![CDATA[<h2>作者信息</h2>
 <p>Andy Dong （Stanford University）、 Ayfer Ozgur （Stanford University）</p>
 <h2>名词解释</h2>
 <p>independent-example mechanisms：每个样本的“是否参与每次训练迭代”的采样过程，是彼此独立生成的。</p>
@@ -59,11 +59,15 @@
 <p>对于这个公式的理解，我之前的想法是Q只是不包含特定样本，但是还有其他样本，所以怎么能正比与高斯噪声呢？这里提供一个理解思路：首先差分隐私关注的是两个相邻数据集的差异，而不是共同部分；然后可以从概率密度的角度考虑，除特定样本外的其他样本是两个相邻数据集共同拥有的，通过概率密度的平移，本质不变，可以将Q和P都归约掉相同部分。</p>
 <p>比如：P分布 $Y_P = g + S + z$ ，Q分布 $Y_Q = S + z$
 定义 $Y' = Y - S$ ，可得 $Y_P' = g + z$ ， $Y_Q' = z$ ，所以平移不会改变两个分布之间的不可区分性。这里可以减S是因为S是一个确切的值或向量，而z是随机变量，所以不能减z。</p>
-]]></content><link href="https://github.com/ruheyun/yc-blog/issues/7"/><category term="DP"/><published>2026-05-13T00:52:21+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/6</id><title>工具类</title><updated>2026-05-13T09:43:41.004393+00:00</updated><content type="html"><![CDATA[<h2>图片处理</h2>
+<p>展开 $P(y)$ 的平方范数：</p>
+<p>$$\parallel y - \tilde{x} \parallel^2_2 = \parallel y \parallel^2_2 - 2 \langle \tilde{x}, y \rangle + \parallel \tilde{x} \parallel^2_2$$</p>
+<p>因此可得：</p>
+<p>$$L(y) = log(E_{\tilde{x} \sim P} [exp(\frac{2 \langle \tilde{x}, y \rangle - \parallel \tilde{x} \parallel^2_2}{2 \sigma^2})])$$</p>
+]]></content><link href="https://github.com/ruheyun/yc-blog/issues/7"/><category term="DP"/><published>2026-05-13T00:52:21+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/6</id><title>工具类</title><updated>2026-05-13T11:29:44.160178+00:00</updated><content type="html"><![CDATA[<h2>图片处理</h2>
 <p><a href="https://www.iloveimg.com/zh-cn">iLoveIMG</a></p>
 <p><a href="https://tinify.cn/">TinyPNG</a></p>
 <p>Windows 自带照片</p>
-]]></content><link href="https://github.com/ruheyun/yc-blog/issues/6"/><category term="分享"/><published>2026-05-12T15:39:13+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/5</id><title>学习类</title><updated>2026-05-13T09:43:41.194639+00:00</updated><content type="html"><![CDATA[<h2>论文检索</h2>
+]]></content><link href="https://github.com/ruheyun/yc-blog/issues/6"/><category term="分享"/><published>2026-05-12T15:39:13+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/5</id><title>学习类</title><updated>2026-05-13T11:29:44.277973+00:00</updated><content type="html"><![CDATA[<h2>论文检索</h2>
 <p><a href="https://arxiv.org">arXiv - Preprint Repository</a></p>
 <p><a href="https://dblp.org">dblp - Computer Science Bibliography</a></p>
 <p><a href="https://scholar.google.com">Google Scholar - Academic Search Engine</a></p>
@@ -77,7 +81,7 @@
 <p><a href="https://algo.itcharge.cn/">算法通关手册</a>：一本系统讲解算法与数据结构、涵盖 LeetCode 题解的中文学习手册</p>
 <p><a href="https://huggingface.co/">HuggingFace</a></p>
 <p><a href="https://www.kaggle.com/">Kaggle</a></p>
-]]></content><link href="https://github.com/ruheyun/yc-blog/issues/5"/><category term="分享"/><published>2026-05-12T15:26:09+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/4</id><title>About</title><updated>2026-05-13T09:43:41.357035+00:00</updated><content type="html"><![CDATA[<p>下面简要介绍一下这个网站和本人的信息</p>
+]]></content><link href="https://github.com/ruheyun/yc-blog/issues/5"/><category term="分享"/><published>2026-05-12T15:26:09+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/4</id><title>About</title><updated>2026-05-13T11:29:44.403283+00:00</updated><content type="html"><![CDATA[<p>下面简要介绍一下这个网站和本人的信息</p>
 <h2>关于网站</h2>
 <blockquote>
 <p>本仓库 Fork 自 <a href="https://github.com/yihong0618/gitblog">yihong0618/gitblog</a>，一个基于 GitHub Issues 和 Actions 构建的个人博客系统。
@@ -101,7 +105,7 @@
 <blockquote>
 <p>“成功通常属于那些忙于寻找成功的人。”——亨利·大卫·梭罗</p>
 </blockquote>
-]]></content><link href="https://github.com/ruheyun/yc-blog/issues/4"/><category term="About"/><published>2026-05-12T13:11:57+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/3</id><title>2026目标</title><updated>2026-05-13T09:43:41.547583+00:00</updated><content type="html"><![CDATA[<ul>
+]]></content><link href="https://github.com/ruheyun/yc-blog/issues/4"/><category term="About"/><published>2026-05-12T13:11:57+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/3</id><title>2026目标</title><updated>2026-05-13T11:29:44.551542+00:00</updated><content type="html"><![CDATA[<ul>
 <li>至少看100篇论文</li>
 <li>完成小论文，并投稿</li>
 <li>过六级</li>

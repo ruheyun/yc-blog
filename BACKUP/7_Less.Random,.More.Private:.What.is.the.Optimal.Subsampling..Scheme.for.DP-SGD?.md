@@ -95,3 +95,12 @@ $$P(y) \varpropto \sum_{\tilde{x}} P(\tilde{x}) exp(- \frac{\parallel y - \tilde
 
 比如：P分布 $Y_P = g + S + z$ ，Q分布 $Y_Q = S + z$ 
 定义 $Y' = Y - S$ ，可得 $Y_P' = g + z$ ， $Y_Q' = z$ ，所以平移不会改变两个分布之间的不可区分性。这里可以减S是因为S是一个确切的值或向量，而z是随机变量，所以不能减z。
+
+展开 $P(y)$ 的平方范数：
+
+$$\parallel y - \tilde{x} \parallel^2_2 = \parallel y \parallel^2_2 - 2 \langle \tilde{x}, y \rangle + \parallel \tilde{x} \parallel^2_2$$
+
+因此可得：
+
+$$L(y) = log(E_{\tilde{x} \sim P} [exp(\frac{2 \langle \tilde{x}, y \rangle - \parallel \tilde{x} \parallel^2_2}{2 \sigma^2})])$$
+
