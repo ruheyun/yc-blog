@@ -138,3 +138,20 @@ $$\frac{\parallel x - \tilde{x} \parallel^2_2}{2 \sigma^2} + \frac{\langle x - \
 
 当 $\sigma \rightarrow 0$ 时，上式确定项主导整个式子的值，差距为无穷大，期望由真实向量主导。
 
+Laplace 原理（对数和的渐近等价于最大项的对数）：
+
+$$log(\sum_i e^{a_i}) \approx max_i a_i$$
+
+上面已经证明了真实向量 $x$ 的指数项与其他候选的差距无穷大，所以可化简：
+
+$$L(y) = log(E_{\tilde{x} \sim P} [exp(\frac{2 \langle \tilde{x}, y \rangle - \parallel \tilde{x} \parallel^2_2}{2 \sigma^2})])$$
+
+$$L(y) \approx log[P(x) exp(\frac{2 \langle x, y \rangle - \parallel x \parallel^2_2}{2 \sigma^2})]$$
+
+$$L(y) \approx logP(x) + \frac{2 \langle x, y \rangle - \parallel x \parallel^2_2}{2 \sigma^2}$$
+
+$$L(y) \approx logP(x) + \frac{\parallel x \parallel^2_2 + 2\sigma \langle x, w \rangle}{2 \sigma^2}$$
+
+$$L(y) \approx \frac{\parallel x \parallel^2_2}{2 \sigma^2} + \frac{\langle x, w \rangle}{\sigma} + logP(x)$$
+
+第一层优化：消除参与度差异。
