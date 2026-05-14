@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<feed xmlns="http://www.w3.org/2005/Atom"><id>https://github.com/ruheyun/yc-blog</id><title>RSS feed of ruheyun's yc-blog</title><updated>2026-05-14T04:11:00.866586+00:00</updated><author><name>ruheyun</name><email>ruheyun@users.noreply.github.com</email></author><link href="https://github.com/ruheyun/yc-blog"/><link href="https://raw.githubusercontent.com/ruheyun/yc-blog/master/feed.xml" rel="self"/><generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator><entry><id>https://github.com/ruheyun/yc-blog/issues/7</id><title>Less Random, More Private: What is the Optimal Subsampling  Scheme for DP-SGD?</title><updated>2026-05-14T04:11:01.243557+00:00</updated><content type="html"><![CDATA[<h2>0.0.作者信息</h2>
+<feed xmlns="http://www.w3.org/2005/Atom"><id>https://github.com/ruheyun/yc-blog</id><title>RSS feed of ruheyun's yc-blog</title><updated>2026-05-14T04:33:02.263193+00:00</updated><author><name>ruheyun</name><email>ruheyun@users.noreply.github.com</email></author><link href="https://github.com/ruheyun/yc-blog"/><link href="https://raw.githubusercontent.com/ruheyun/yc-blog/master/feed.xml" rel="self"/><generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator><entry><id>https://github.com/ruheyun/yc-blog/issues/7</id><title>Less Random, More Private: What is the Optimal Subsampling  Scheme for DP-SGD?</title><updated>2026-05-14T04:33:02.590973+00:00</updated><content type="html"><![CDATA[<h2>0.0.作者信息</h2>
 <p>Andy Dong （Stanford University）、 Ayfer Ozgur （Stanford University）</p>
 <h2>0.1.名词解释</h2>
 <p>independent-example mechanisms：每个样本的“是否参与每次训练迭代”的采样过程，是彼此独立生成的。</p>
@@ -88,12 +88,15 @@
 <p>$$L(y) \approx logP(x) + \frac{2 \langle x, y \rangle - \parallel x \parallel^2_2}{2 \sigma^2}$$</p>
 <p>$$L(y) \approx logP(x) + \frac{\parallel x \parallel^2_2 + 2\sigma \langle x, w \rangle}{2 \sigma^2}$$</p>
 <p>$$L(y) \approx \frac{\parallel x \parallel^2_2}{2 \sigma^2} + \frac{\langle x, w \rangle}{\sigma} + logP(x)$$</p>
-<p>第一层优化：消除参与度差异。</p>
-]]></content><link href="https://github.com/ruheyun/yc-blog/issues/7"/><category term="DP"/><published>2026-05-13T00:52:21+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/6</id><title>工具类</title><updated>2026-05-14T04:11:01.433595+00:00</updated><content type="html"><![CDATA[<h2>图片处理</h2>
+<p>第一项优化：消除参与度差异。由前面定义的采样空间，第一项的期望固定为 $\frac{k}{2\sigma^2}$ 。当这一项方差为0时，值被最小化。</p>
+<p>第二项优化：一阶噪声的不变性。 由采样空间 $\parallel x \parallel^2 = k$ ，因此内积期望为0，方差固定为 k，不会随着 P 改变。</p>
+<p>第三项优化：最大化熵。最后一项的期望为 P 的熵的相反数，因此要最小化第三项，等于最大化 P 的熵，由于BIS是结构化的，因此在该项上是次优的。</p>
+<p>因此以往的直觉：越随机，越能增强隐私，是强调了第三项的直觉。但是以上分析可知，第一项中样本的参与方差才是主导项。所以在 $\sigma \rightarrow 0$ 时，样本参与方差为0的BIS要优于泊松采样。</p>
+]]></content><link href="https://github.com/ruheyun/yc-blog/issues/7"/><category term="DP"/><published>2026-05-13T00:52:21+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/6</id><title>工具类</title><updated>2026-05-14T04:33:02.734240+00:00</updated><content type="html"><![CDATA[<h2>图片处理</h2>
 <p><a href="https://www.iloveimg.com/zh-cn">iLoveIMG</a></p>
 <p><a href="https://tinify.cn/">TinyPNG</a></p>
 <p>Windows 自带照片</p>
-]]></content><link href="https://github.com/ruheyun/yc-blog/issues/6"/><category term="分享"/><published>2026-05-12T15:39:13+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/5</id><title>学习类</title><updated>2026-05-14T04:11:01.577943+00:00</updated><content type="html"><![CDATA[<h2>论文检索</h2>
+]]></content><link href="https://github.com/ruheyun/yc-blog/issues/6"/><category term="分享"/><published>2026-05-12T15:39:13+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/5</id><title>学习类</title><updated>2026-05-14T04:33:02.870175+00:00</updated><content type="html"><![CDATA[<h2>论文检索</h2>
 <p><a href="https://arxiv.org">arXiv - Preprint Repository</a></p>
 <p><a href="https://dblp.org">dblp - Computer Science Bibliography</a></p>
 <p><a href="https://scholar.google.com">Google Scholar - Academic Search Engine</a></p>
@@ -107,7 +110,7 @@
 <p><a href="https://algo.itcharge.cn/">算法通关手册</a>：一本系统讲解算法与数据结构、涵盖 LeetCode 题解的中文学习手册</p>
 <p><a href="https://huggingface.co/">HuggingFace</a></p>
 <p><a href="https://www.kaggle.com/">Kaggle</a></p>
-]]></content><link href="https://github.com/ruheyun/yc-blog/issues/5"/><category term="分享"/><published>2026-05-12T15:26:09+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/4</id><title>About</title><updated>2026-05-14T04:11:01.736682+00:00</updated><content type="html"><![CDATA[<p>下面简要介绍一下这个网站和本人的信息</p>
+]]></content><link href="https://github.com/ruheyun/yc-blog/issues/5"/><category term="分享"/><published>2026-05-12T15:26:09+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/4</id><title>About</title><updated>2026-05-14T04:33:02.989095+00:00</updated><content type="html"><![CDATA[<p>下面简要介绍一下这个网站和本人的信息</p>
 <h2>关于网站</h2>
 <blockquote>
 <p>本仓库 Fork 自 <a href="https://github.com/yihong0618/gitblog">yihong0618/gitblog</a>，一个基于 GitHub Issues 和 Actions 构建的个人博客系统。
@@ -131,7 +134,7 @@
 <blockquote>
 <p>“成功通常属于那些忙于寻找成功的人。”——亨利·大卫·梭罗</p>
 </blockquote>
-]]></content><link href="https://github.com/ruheyun/yc-blog/issues/4"/><category term="About"/><published>2026-05-12T13:11:57+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/3</id><title>2026目标</title><updated>2026-05-14T04:11:01.890810+00:00</updated><content type="html"><![CDATA[<ul>
+]]></content><link href="https://github.com/ruheyun/yc-blog/issues/4"/><category term="About"/><published>2026-05-12T13:11:57+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/3</id><title>2026目标</title><updated>2026-05-14T04:33:03.104190+00:00</updated><content type="html"><![CDATA[<ul>
 <li>至少看100篇论文</li>
 <li>完成小论文，并投稿</li>
 <li>过六级</li>

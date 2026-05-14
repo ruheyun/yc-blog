@@ -154,4 +154,10 @@ $$L(y) \approx logP(x) + \frac{\parallel x \parallel^2_2 + 2\sigma \langle x, w 
 
 $$L(y) \approx \frac{\parallel x \parallel^2_2}{2 \sigma^2} + \frac{\langle x, w \rangle}{\sigma} + logP(x)$$
 
-第一层优化：消除参与度差异。
+第一项优化：消除参与度差异。由前面定义的采样空间，第一项的期望固定为 $\frac{k}{2\sigma^2}$ 。当这一项方差为0时，值被最小化。
+
+第二项优化：一阶噪声的不变性。 由采样空间 $\parallel x \parallel^2 = k$ ，因此内积期望为0，方差固定为 k，不会随着 P 改变。
+
+第三项优化：最大化熵。最后一项的期望为 P 的熵的相反数，因此要最小化第三项，等于最大化 P 的熵，由于BIS是结构化的，因此在该项上是次优的。
+
+因此以往的直觉：越随机，越能增强隐私，是强调了第三项的直觉。但是以上分析可知，第一项中样本的参与方差才是主导项。所以在 $\sigma \rightarrow 0$ 时，样本参与方差为0的BIS要优于泊松采样。
