@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<feed xmlns="http://www.w3.org/2005/Atom"><id>https://github.com/ruheyun/yc-blog</id><title>RSS feed of ruheyun's yc-blog</title><updated>2026-05-13T11:29:43.610266+00:00</updated><author><name>ruheyun</name><email>ruheyun@users.noreply.github.com</email></author><link href="https://github.com/ruheyun/yc-blog"/><link href="https://raw.githubusercontent.com/ruheyun/yc-blog/master/feed.xml" rel="self"/><generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator><entry><id>https://github.com/ruheyun/yc-blog/issues/7</id><title>Less Random, More Private: What is the Optimal Subsampling  Scheme for DP-SGD?</title><updated>2026-05-13T11:29:44.013664+00:00</updated><content type="html"><![CDATA[<h2>作者信息</h2>
+<feed xmlns="http://www.w3.org/2005/Atom"><id>https://github.com/ruheyun/yc-blog</id><title>RSS feed of ruheyun's yc-blog</title><updated>2026-05-14T03:50:05.086699+00:00</updated><author><name>ruheyun</name><email>ruheyun@users.noreply.github.com</email></author><link href="https://github.com/ruheyun/yc-blog"/><link href="https://raw.githubusercontent.com/ruheyun/yc-blog/master/feed.xml" rel="self"/><generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator><entry><id>https://github.com/ruheyun/yc-blog/issues/7</id><title>Less Random, More Private: What is the Optimal Subsampling  Scheme for DP-SGD?</title><updated>2026-05-14T03:50:05.473159+00:00</updated><content type="html"><![CDATA[<h2>0.0.作者信息</h2>
 <p>Andy Dong （Stanford University）、 Ayfer Ozgur （Stanford University）</p>
-<h2>名词解释</h2>
+<h2>0.1.名词解释</h2>
 <p>independent-example mechanisms：每个样本的“是否参与每次训练迭代”的采样过程，是彼此独立生成的。</p>
 <p>Balanced Iteration Subsampling (BIS)：本文提出的采样方法，每个样本在T次迭代中恰好参与k次迭代，随机均匀选择，从而消除了样本间参与次数的差异。</p>
 <p>Hockey-stick divergence（曲棍球棒散度）：是专门为 DP 的“近似隐私”概念量身定制的等价表述，在差分隐私文献中通常称为 $E_{\gamma}-divergence$ 。</p>
 <p>第一性原理：不依赖经验、类比或现有惯例，而是将复杂问题拆解到最基本、不可再分的事实或公理，然后从这些底层基础出发，通过逻辑演绎重新推导解决方案。</p>
 <p>布尔超立方体（Boolean Hypercube）：集合 $\{0, 1\}^T$ 包含 $2^T$ 个可能得 0、1向量。例如 T=3，包含（0,0,0），（0,0,1），...，（1,1,1）共8个向量。</p>
-<h2>本文贡献</h2>
+<h2>1.本文贡献</h2>
 <ul>
 <li>理论上证明了BIS在两个极限情况 ($\sigma \rightarrow 0, \sigma \rightarrow \infty$) 下都可以取得最优。</li>
 <li>引入了蒙特卡洛隐私会计，消除了先验界中的松弛，进行近似精确的有限噪声核算。</li>
@@ -16,8 +16,8 @@
 <blockquote>
 <p>本文的反直觉观点：更多的采样随机性并不一定意味着更强的隐私放大。</p>
 </blockquote>
-<h2>背景知识</h2>
-<h3>差分隐私</h3>
+<h2>2.背景知识</h2>
+<h3>2.1差分隐私</h3>
 <p>以机器学习梯度的视角来定义差分隐私：令 $\chi$ 表示数据域，令 $M$ 表示一个随机算法。考虑置零邻接关系（zero-out adjacency relation）。如果数据集 $D'$ 可以通过将 $D$ 中的一个元素替换为一个总是贡献零梯度的特殊记录 $\perp$ 而得到，则称两个数据集 $D, D' \subseteq \chi$ 是相邻的。</p>
 <p>令 $P, Q$ 分别表示 $M(D), M(D')$ 的分布。如果 $P, Q$ 之间的 $e^{\epsilon}$ -hockey-stick divergence以 $\delta$ 为界，即满足下式，则称机制 $M$ 满足 $(\epsilon, \delta)-DP$ ：</p>
 <p>$$H_{e^{\epsilon}}(P \parallel Q) = E_{y \sim P} [max \{ 1 - e^{\epsilon} \frac{Q(y)}{P(y)}, 0 \}] = E_{y \sim Q} [max \{ \frac{P(y)}{Q(y)} - e^{\epsilon}, 0 \}] \leq \delta$$</p>
@@ -29,7 +29,7 @@
 <p>$$\int max \{P(y) - e^{\epsilon} Q(y), 0\} dy \leq \delta$$</p>
 <p>$$\int Q(y) max \{\frac{P(y)}{Q(y)} - e^{\epsilon}, 0\} dy \leq \delta$$</p>
 <p>$$E_{y \sim Q} [max \{ \frac{P(y)}{Q(y)} - e^{\epsilon}, 0 \}] \leq \delta$$</p>
-<h3>蒙特卡洛隐私会计</h3>
+<h3>2.2蒙特卡洛隐私会计</h3>
 <p>上述期望无法计算或计算较为复杂，因此引入蒙特卡洛进行近似计算，通过抽样和构造统计置信区间来证明担保隐私性。</p>
 <p>$$\hat{\delta} = \frac{1}{s} \sum^s_{i=1} max \{ 1 - e^{\epsilon} \frac{Q(y_i)}{P(y_i)}, 0 \}, \quad \quad y_i \sim P$$</p>
 <p>第一个问题：在蒙特卡洛隐私会计中，高效计算这个似然比 $\frac{P(y)}{Q(y)}$ 是关键挑战。</p>
@@ -39,7 +39,7 @@
 </blockquote>
 <p>解决方案：引入 Estimate-Verify-Release (EVR) 框架，（1）将统计验证器的失败概率吸收到总的 $\delta$ 预算中；（2）不使用 $\hat{\delta}$ ，而是使用统计置信上界；（3）确保即使考虑统计误差，仍然满足 $(\epsilon, \delta)-DP$ 。</p>
 <p>在本文评估中，采用了改进的 EVR 蒙特卡洛隐私会计框架，解决第二个问题（已有工作）。因此本文主要专注于解决高效地评估平衡迭代子采样（Balanced Iteration Subsampling）的精确似然比（专注于解决第一个问题）。</p>
-<h2>隐私放大的最优子采样</h2>
+<h2>3.隐私放大的最优子采样</h2>
 <p>定义设计空间：设一个训练过程由总共T次迭代，并设 $k \in (0, T)$ 为期望参与次数。将 $P_{T, k}$ 定义为布尔超立方体 $\{0, 1\}^T$ 上满足期望参与次数约束的所有概率分布 P 的集合：</p>
 <p>$$E_{x \sim P} \parallel x \parallel^2_2 = \sum_{x \in \{0, 1\}^T} P(x) \parallel x \parallel^2_2 = k$$</p>
 <p>将独立样本子采样方案（independent-example subsampling schemes）定义为一批次构建机制的集合，其中每个样本 i 的参与向量 $x^{(i)}$ 是从某个 P 中独立同分布（i.i.d.）抽取的。</p>
@@ -63,11 +63,28 @@
 <p>$$\parallel y - \tilde{x} \parallel^2_2 = \parallel y \parallel^2_2 - 2 \langle \tilde{x}, y \rangle + \parallel \tilde{x} \parallel^2_2$$</p>
 <p>因此可得：</p>
 <p>$$L(y) = log(E_{\tilde{x} \sim P} [exp(\frac{2 \langle \tilde{x}, y \rangle - \parallel \tilde{x} \parallel^2_2}{2 \sigma^2})])$$</p>
-]]></content><link href="https://github.com/ruheyun/yc-blog/issues/7"/><category term="DP"/><published>2026-05-13T00:52:21+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/6</id><title>工具类</title><updated>2026-05-13T11:29:44.160178+00:00</updated><content type="html"><![CDATA[<h2>图片处理</h2>
+<h3>3.1.推导低噪声最优</h3>
+<p>先考虑低噪声区 $\sigma \rightarrow 0$ ，对应高隐私预算和高模型效用性的情况。</p>
+<p>为了理解上式中的和是由哪一项主导，这里显式写出真实采样向量 $x$ 处的评估指数与任意虚假采样向量 $x' \neq x$ 处评估指数之间的差距：</p>
+<p>上式中指数部分为：</p>
+<p>$$\frac{2 \langle \tilde{x}, y \rangle - \parallel \tilde{x} \parallel^2_2}{2 \sigma^2}$$</p>
+<p>对于真实采样向量，将 $y = x + \sigma w$ 带入得：</p>
+<p>$$\frac{2 \langle x, x + \sigma w \rangle - \parallel x \parallel^2_2}{2 \sigma^2}$$</p>
+<p>对于虚假采样向量，将 $y = x + \sigma w$ 带入得：</p>
+<p>$$\frac{2 \langle \tilde{x}, x + \sigma w \rangle - \parallel \tilde{x} \parallel^2_2}{2 \sigma^2}$$</p>
+<p>两者相减得：</p>
+<p>$$\frac{2 \langle x, x + \sigma w \rangle - \parallel x \parallel^2_2}{2 \sigma^2} - \frac{2 \langle \tilde{x}, x + \sigma w \rangle - \parallel \tilde{x} \parallel^2_2}{2 \sigma^2}$$</p>
+<p>$$\frac{2 \langle x, x \rangle + 2\sigma \langle x, w \rangle - \parallel x \parallel^2_2}{2 \sigma^2} - \frac{2 \langle \tilde{x}, x \rangle + 2\sigma \langle \tilde{x}, w \rangle - \parallel \tilde{x} \parallel^2_2}{2 \sigma^2}$$</p>
+<p>$$\frac{2\parallel x \parallel^2_2 + 2\sigma \langle x, w \rangle - \parallel x \parallel^2_2 - 2 \langle \tilde{x}, x \rangle - 2\sigma \langle \tilde{x}, w \rangle + \parallel \tilde{x} \parallel^2_2}{2 \sigma^2}$$</p>
+<p>$$\frac{\parallel x \parallel^2_2 + \parallel \tilde{x} \parallel^2_2 - 2 \langle \tilde{x}, x \rangle + 2\sigma \langle x, w \rangle  - 2\sigma \langle \tilde{x}, w \rangle}{2 \sigma^2}$$</p>
+<p>$$\frac{\parallel x - \tilde{x} \parallel^2_2 + 2\sigma \langle x - \tilde{x}, w \rangle}{2 \sigma^2}$$</p>
+<p>$$\frac{\parallel x - \tilde{x} \parallel^2_2}{2 \sigma^2} + \frac{\langle x - \tilde{x}, w \rangle}{\sigma}$$</p>
+<p>当 $\sigma \rightarrow 0$ 时，上式确定项主导整个式子的值，差距为无穷大，期望由真实向量主导。</p>
+]]></content><link href="https://github.com/ruheyun/yc-blog/issues/7"/><category term="DP"/><published>2026-05-13T00:52:21+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/6</id><title>工具类</title><updated>2026-05-14T03:50:05.604669+00:00</updated><content type="html"><![CDATA[<h2>图片处理</h2>
 <p><a href="https://www.iloveimg.com/zh-cn">iLoveIMG</a></p>
 <p><a href="https://tinify.cn/">TinyPNG</a></p>
 <p>Windows 自带照片</p>
-]]></content><link href="https://github.com/ruheyun/yc-blog/issues/6"/><category term="分享"/><published>2026-05-12T15:39:13+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/5</id><title>学习类</title><updated>2026-05-13T11:29:44.277973+00:00</updated><content type="html"><![CDATA[<h2>论文检索</h2>
+]]></content><link href="https://github.com/ruheyun/yc-blog/issues/6"/><category term="分享"/><published>2026-05-12T15:39:13+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/5</id><title>学习类</title><updated>2026-05-14T03:50:05.724248+00:00</updated><content type="html"><![CDATA[<h2>论文检索</h2>
 <p><a href="https://arxiv.org">arXiv - Preprint Repository</a></p>
 <p><a href="https://dblp.org">dblp - Computer Science Bibliography</a></p>
 <p><a href="https://scholar.google.com">Google Scholar - Academic Search Engine</a></p>
@@ -81,7 +98,7 @@
 <p><a href="https://algo.itcharge.cn/">算法通关手册</a>：一本系统讲解算法与数据结构、涵盖 LeetCode 题解的中文学习手册</p>
 <p><a href="https://huggingface.co/">HuggingFace</a></p>
 <p><a href="https://www.kaggle.com/">Kaggle</a></p>
-]]></content><link href="https://github.com/ruheyun/yc-blog/issues/5"/><category term="分享"/><published>2026-05-12T15:26:09+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/4</id><title>About</title><updated>2026-05-13T11:29:44.403283+00:00</updated><content type="html"><![CDATA[<p>下面简要介绍一下这个网站和本人的信息</p>
+]]></content><link href="https://github.com/ruheyun/yc-blog/issues/5"/><category term="分享"/><published>2026-05-12T15:26:09+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/4</id><title>About</title><updated>2026-05-14T03:50:05.856837+00:00</updated><content type="html"><![CDATA[<p>下面简要介绍一下这个网站和本人的信息</p>
 <h2>关于网站</h2>
 <blockquote>
 <p>本仓库 Fork 自 <a href="https://github.com/yihong0618/gitblog">yihong0618/gitblog</a>，一个基于 GitHub Issues 和 Actions 构建的个人博客系统。
@@ -105,7 +122,7 @@
 <blockquote>
 <p>“成功通常属于那些忙于寻找成功的人。”——亨利·大卫·梭罗</p>
 </blockquote>
-]]></content><link href="https://github.com/ruheyun/yc-blog/issues/4"/><category term="About"/><published>2026-05-12T13:11:57+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/3</id><title>2026目标</title><updated>2026-05-13T11:29:44.551542+00:00</updated><content type="html"><![CDATA[<ul>
+]]></content><link href="https://github.com/ruheyun/yc-blog/issues/4"/><category term="About"/><published>2026-05-12T13:11:57+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/3</id><title>2026目标</title><updated>2026-05-14T03:50:05.978709+00:00</updated><content type="html"><![CDATA[<ul>
 <li>至少看100篇论文</li>
 <li>完成小论文，并投稿</li>
 <li>过六级</li>
