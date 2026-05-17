@@ -1,5 +1,35 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<feed xmlns="http://www.w3.org/2005/Atom"><id>https://github.com/ruheyun/yc-blog</id><title>RSS feed of ruheyun's yc-blog</title><updated>2026-05-15T11:50:17.788447+00:00</updated><author><name>ruheyun</name><email>ruheyun@users.noreply.github.com</email></author><link href="https://github.com/ruheyun/yc-blog"/><link href="https://raw.githubusercontent.com/ruheyun/yc-blog/master/feed.xml" rel="self"/><generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator><entry><id>https://github.com/ruheyun/yc-blog/issues/7</id><title>Less Random, More Private: What is the Optimal Subsampling  Scheme for DP-SGD?</title><updated>2026-05-15T11:50:18.237912+00:00</updated><content type="html"><![CDATA[<h2>0.0.作者信息</h2>
+<feed xmlns="http://www.w3.org/2005/Atom"><id>https://github.com/ruheyun/yc-blog</id><title>RSS feed of ruheyun's yc-blog</title><updated>2026-05-17T12:09:53.114066+00:00</updated><author><name>ruheyun</name><email>ruheyun@users.noreply.github.com</email></author><link href="https://github.com/ruheyun/yc-blog"/><link href="https://raw.githubusercontent.com/ruheyun/yc-blog/master/feed.xml" rel="self"/><generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator><entry><id>https://github.com/ruheyun/yc-blog/issues/8</id><title>概率分布差异的衡量方法</title><updated>2026-05-17T12:09:53.445225+00:00</updated><content type="html"><![CDATA[<p>常用的衡量两个概率分布 P，Q 的距离或差异方法。</p>
+<h2>Total Variation Distance</h2>
+<p>总变差距离：两个分布曲线之间‘面积差’的一半。缺点：高维时难以估计。</p>
+<p>连续：</p>
+<p>$$D_{TV}(P, Q) = \frac{1}{2} \int \mid p(x) - q(x) \mid dx$$</p>
+<p>离散：</p>
+<p>$$D_{TV}(P, Q) = \frac{1}{2} \sum_i \mid p_i - q_i \mid$$</p>
+<h2>KL Divergence</h2>
+<p>KL 散度：用Q去近似P，会额外损失多少编码长度。最大似然估计（MLE）本质就是最小KL散度。</p>
+<p>连续：</p>
+<p>$$D_{KL}(P \parallel Q) = \int p(x) log \frac{p(x)}{q(x)} dx$$</p>
+<blockquote>
+<p>KL散度是非对称的，将P和Q换个位置后不等。</p>
+</blockquote>
+<h2>Jensen-Shannon Divergence</h2>
+<p>JS 散度：对称、有界、比KL稳定，常用于GAN的优化函数。</p>
+<p>连续：</p>
+<p>$$JS(P, Q) = \frac{1}{2} D_{KL} (P \parallel M) + \frac{1}{2} D_{KL} (Q \parallel M)$$</p>
+<p>其中：</p>
+<p>$$M = \frac{P + Q}{2}$$</p>
+<h2>Fisher Divergence</h2>
+<p>几何意义：两个分布的分数场，即概率流形上的梯度方向。基于分数的扩散模型中核心思想。</p>
+<p>连续：</p>
+<p>$$D_F (P \parallel Q) = E_P [\parallel \nabla_x log p(x) - \nabla_x log q(x) \parallel^2]$$</p>
+<h2>Wasserstein Distance（Earth Mover Distance）</h2>
+<p>地球移动距离（推土机距离）：把P看作一堆土，Q看作目标土堆，将P搬运到Q的最小搬运成本。</p>
+<p>$$W(P, Q) = inf_{\gamma \in \prod(P, Q)} E_{(x,y) \sim \gamma} [\parallel x - y \parallel]$$</p>
+<h2>Mahalanobis Distance</h2>
+<p>马氏距离：考虑协方差后的‘真实欧式距离’。</p>
+<p>$$d_M(x,y) = \sqrt{(x - y)^T \Sigma^{-1} (x - y)}$$</p>
+]]></content><link href="https://github.com/ruheyun/yc-blog/issues/8"/><category term="基础知识"/><published>2026-05-17T12:09:36+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/7</id><title>Less Random, More Private: What is the Optimal Subsampling  Scheme for DP-SGD?</title><updated>2026-05-17T12:09:53.565295+00:00</updated><content type="html"><![CDATA[<h2>0.0.作者信息</h2>
 <p>Andy Dong （Stanford University）、 Ayfer Ozgur （Stanford University）</p>
 <h2>0.1.名词解释</h2>
 <p>independent-example mechanisms：每个样本的“是否参与每次训练迭代”的采样过程，是彼此独立生成的。</p>
@@ -92,11 +122,11 @@
 <p>第二项优化：一阶噪声的不变性。 由采样空间 $\parallel x \parallel^2 = k$ ，因此内积期望为0，方差固定为 k，不会随着 P 改变。</p>
 <p>第三项优化：最大化熵。最后一项的期望为 P 的熵的相反数，因此要最小化第三项，等于最大化 P 的熵，由于BIS是结构化的，因此在该项上是次优的。</p>
 <p>因此以往的直觉：越随机，越能增强隐私，是强调了第三项的直觉。但是以上分析可知，第一项中样本的参与方差才是主导项。所以在 $\sigma \rightarrow 0$ 时，样本参与方差为0的BIS要优于泊松采样。</p>
-]]></content><link href="https://github.com/ruheyun/yc-blog/issues/7"/><category term="DP"/><published>2026-05-13T00:52:21+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/6</id><title>工具类</title><updated>2026-05-15T11:50:18.388130+00:00</updated><content type="html"><![CDATA[<h2>图片处理</h2>
+]]></content><link href="https://github.com/ruheyun/yc-blog/issues/7"/><category term="DP"/><published>2026-05-13T00:52:21+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/6</id><title>工具类</title><updated>2026-05-17T12:09:53.693208+00:00</updated><content type="html"><![CDATA[<h2>图片处理</h2>
 <p><a href="https://www.iloveimg.com/zh-cn">iLoveIMG</a></p>
 <p><a href="https://tinify.cn/">TinyPNG</a></p>
 <p>Windows 自带照片</p>
-]]></content><link href="https://github.com/ruheyun/yc-blog/issues/6"/><category term="分享"/><published>2026-05-12T15:39:13+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/5</id><title>学习类</title><updated>2026-05-15T11:50:18.493446+00:00</updated><content type="html"><![CDATA[<h2>论文检索</h2>
+]]></content><link href="https://github.com/ruheyun/yc-blog/issues/6"/><category term="分享"/><published>2026-05-12T15:39:13+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/5</id><title>学习类</title><updated>2026-05-17T12:09:53.793300+00:00</updated><content type="html"><![CDATA[<h2>论文检索</h2>
 <p><a href="https://arxiv.org">arXiv - Preprint Repository</a></p>
 <p><a href="https://dblp.org">dblp - Computer Science Bibliography</a></p>
 <p><a href="https://scholar.google.com">Google Scholar - Academic Search Engine</a></p>
@@ -110,7 +140,7 @@
 <p><a href="https://algo.itcharge.cn/">算法通关手册</a>：一本系统讲解算法与数据结构、涵盖 LeetCode 题解的中文学习手册</p>
 <p><a href="https://huggingface.co/">HuggingFace</a></p>
 <p><a href="https://www.kaggle.com/">Kaggle</a></p>
-]]></content><link href="https://github.com/ruheyun/yc-blog/issues/5"/><category term="分享"/><published>2026-05-12T15:26:09+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/4</id><title>About</title><updated>2026-05-15T11:50:18.616384+00:00</updated><content type="html"><![CDATA[<p>下面简要介绍一下这个网站</p>
+]]></content><link href="https://github.com/ruheyun/yc-blog/issues/5"/><category term="分享"/><published>2026-05-12T15:26:09+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/4</id><title>About</title><updated>2026-05-17T12:09:53.901780+00:00</updated><content type="html"><![CDATA[<p>下面简要介绍一下这个网站</p>
 <h2>关于网站</h2>
 <blockquote>
 <p>本仓库 Fork 自 <a href="https://github.com/yihong0618/gitblog">yihong0618/gitblog</a>，一个基于 GitHub Issues 和 Actions 构建的个人博客系统。
@@ -126,7 +156,7 @@
 <blockquote>
 <p>“成功通常属于那些忙于寻找成功的人。”——亨利·大卫·梭罗</p>
 </blockquote>
-]]></content><link href="https://github.com/ruheyun/yc-blog/issues/4"/><category term="About"/><published>2026-05-12T13:11:57+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/3</id><title>2026目标</title><updated>2026-05-15T11:50:18.720202+00:00</updated><content type="html"><![CDATA[<ul>
+]]></content><link href="https://github.com/ruheyun/yc-blog/issues/4"/><category term="About"/><published>2026-05-12T13:11:57+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/3</id><title>2026目标</title><updated>2026-05-17T12:09:54.003271+00:00</updated><content type="html"><![CDATA[<ul>
 <li>至少看100篇论文</li>
 <li>完成小论文，并投稿</li>
 <li>过六级</li>
