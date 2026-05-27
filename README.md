@@ -18,6 +18,9 @@ My personal blog([About](https://github.com/ruheyun/yc-blog/issues/4)) using iss
 
 - [每日问答](https://github.com/ruheyun/yc-blog/issues/9)--2026-05-21
 - [概率分布差异的衡量方法](https://github.com/ruheyun/yc-blog/issues/8)--2026-05-17
+## 学习笔记
+
+- [Huggingface下载模型失败解决办法](https://github.com/ruheyun/yc-blog/issues/10)--2026-05-27
 ## 目标
 
 - [2026目标](https://github.com/ruheyun/yc-blog/issues/3)--2026-05-12

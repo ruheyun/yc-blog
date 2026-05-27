@@ -43,4 +43,15 @@ Huggingface的模型文件是基于git进行远程管理的，因此可以通过
 git clone https://huggingface.co/Qwen/Qwen3-0.6B
 ```
 
-一般模型权重较大，通过clone下载的都是Git LFS pointer文件（指针文件），并不是真实权重。
+一般模型权重较大，通过clone下载的都是Git LFS pointer文件（指针文件），并不是真实权重。进行模型文件夹，安装模型。
+
+```
+cd Qwen3-0.6B
+git lfs pull
+```
+
+之后使用本地路径即可。
+
+### 手动下载
+
+找到Huggingface模型页面，点击‘Files and versions’后下载页面所有文件，放到本地文件夹Qwen3-0.6B（模型的名字），然后使用本地路径。
