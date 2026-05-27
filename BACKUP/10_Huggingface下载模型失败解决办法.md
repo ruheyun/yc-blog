@@ -37,13 +37,13 @@ sudo apt install git
 sudo apt install git-lfs
 ```
 
-Huggingface的模型文件是基于git进行远程管理的，因此可以通过克隆来下载模型。找到模型页面，复杂上方地址栏里的地址，就是仓库地址。
+Huggingface的模型文件是基于git进行远程管理的，因此可以通过克隆来下载模型。找到模型页面，复制上方地址栏里的地址，就是仓库地址。
 
 ```
 git clone https://huggingface.co/Qwen/Qwen3-0.6B
 ```
 
-一般模型权重较大，通过clone下载的都是Git LFS pointer文件（指针文件），并不是真实权重。进行模型文件夹，安装模型。
+一般模型权重较大，通过clone下载的都是Git LFS pointer文件（指针文件），并不是真实权重。进入模型文件夹，安装模型。
 
 ```
 cd Qwen3-0.6B
