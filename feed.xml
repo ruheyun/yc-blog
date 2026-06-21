@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<feed xmlns="http://www.w3.org/2005/Atom"><id>https://github.com/ruheyun/yc-blog</id><title>RSS feed of ruheyun's yc-blog</title><updated>2026-06-14T11:36:12.023903+00:00</updated><author><name>ruheyun</name><email>ruheyun@users.noreply.github.com</email></author><link href="https://github.com/ruheyun/yc-blog"/><link href="https://raw.githubusercontent.com/ruheyun/yc-blog/master/feed.xml" rel="self"/><generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator><entry><id>https://github.com/ruheyun/yc-blog/issues/13</id><title>Balanced Mixed-Type Tabular Data Synthesis with Diffusion Models</title><updated>2026-06-14T11:36:12.359352+00:00</updated><content type="html"><![CDATA[<p>Zeyu Yang, Han Yu, Peikun Guo, Khadija Zanna, Xiaoxue Yang, Akane Sano: Balanced Mixed-Type Tabular Data Synthesis with Diffusion Models. Trans. Mach. Learn. Res. 2025 (2025)</p>
-]]></content><link href="https://github.com/ruheyun/yc-blog/issues/13"/><category term="DM"/><published>2026-06-08T02:35:13+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/12</id><title>DPIS: An Enhanced Mechanism for Differentially Private SGD  with Importance Sampling</title><updated>2026-06-14T11:36:12.461823+00:00</updated><content type="html"><![CDATA[<p>Jianxin Wei, Ergute Bao, Xiaokui Xiao, Yin Yang: DPIS: An Enhanced Mechanism for Differentially Private SGD with Importance Sampling. CCS 2022: 2885-2899</p>
-]]></content><link href="https://github.com/ruheyun/yc-blog/issues/12"/><category term="DP"/><published>2026-06-01T15:53:54+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/11</id><title>重置Windows的WSL子系统密码</title><updated>2026-06-14T11:36:12.573581+00:00</updated><content type="html"><![CDATA[<p>在 Windows PowerShell（不是 Ubuntu 终端）运行：</p>
+<feed xmlns="http://www.w3.org/2005/Atom"><id>https://github.com/ruheyun/yc-blog</id><title>RSS feed of ruheyun's yc-blog</title><updated>2026-06-21T08:58:35.466404+00:00</updated><author><name>ruheyun</name><email>ruheyun@users.noreply.github.com</email></author><link href="https://github.com/ruheyun/yc-blog"/><link href="https://raw.githubusercontent.com/ruheyun/yc-blog/master/feed.xml" rel="self"/><generator uri="https://lkiesow.github.io/python-feedgen" version="1.0.0">python-feedgen</generator><entry><id>https://github.com/ruheyun/yc-blog/issues/13</id><title>Balanced Mixed-Type Tabular Data Synthesis with Diffusion Models</title><updated>2026-06-21T08:58:35.828819+00:00</updated><content type="html"><![CDATA[<p>Zeyu Yang, Han Yu, Peikun Guo, Khadija Zanna, Xiaoxue Yang, Akane Sano: Balanced Mixed-Type Tabular Data Synthesis with Diffusion Models. Trans. Mach. Learn. Res. 2025 (2025)</p>
+]]></content><link href="https://github.com/ruheyun/yc-blog/issues/13"/><category term="DM"/><published>2026-06-08T02:35:13+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/12</id><title>DPIS: An Enhanced Mechanism for Differentially Private SGD  with Importance Sampling</title><updated>2026-06-21T08:58:35.951960+00:00</updated><content type="html"><![CDATA[<p>Jianxin Wei, Ergute Bao, Xiaokui Xiao, Yin Yang: DPIS: An Enhanced Mechanism for Differentially Private SGD with Importance Sampling. CCS 2022: 2885-2899</p>
+]]></content><link href="https://github.com/ruheyun/yc-blog/issues/12"/><category term="DP"/><published>2026-06-01T15:53:54+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/11</id><title>重置Windows的WSL子系统密码</title><updated>2026-06-21T08:58:36.084492+00:00</updated><content type="html"><![CDATA[<p>在 Windows PowerShell（不是 Ubuntu 终端）运行：</p>
 <pre><code>wsl -u root
 </code></pre>
 <p>进入root后，再输入下面命令（这里ruhe是wsl的用户名）：</p>
@@ -10,7 +10,7 @@
 <p>然后可以输入新密码，之后输入退出命令：</p>
 <pre><code>exit
 </code></pre>
-]]></content><link href="https://github.com/ruheyun/yc-blog/issues/11"/><category term="笔记"/><published>2026-05-27T03:51:31+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/10</id><title>Huggingface下载模型失败解决办法</title><updated>2026-06-14T11:36:12.686858+00:00</updated><content type="html"><![CDATA[<h2>正常下载模型方法</h2>
+]]></content><link href="https://github.com/ruheyun/yc-blog/issues/11"/><category term="笔记"/><published>2026-05-27T03:51:31+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/10</id><title>Huggingface下载模型失败解决办法</title><updated>2026-06-21T08:58:36.205585+00:00</updated><content type="html"><![CDATA[<h2>正常下载模型方法</h2>
 <pre><code>from huggingface_hub import snapshot_download
 
 snapshot_download(&quot;Qwen/Qwen3-0.6B&quot;)
@@ -42,7 +42,7 @@ git lfs pull
 <p>之后使用本地路径即可。</p>
 <h3>手动下载</h3>
 <p>找到Huggingface模型页面，点击‘Files and versions’后下载页面所有文件，放到本地文件夹Qwen3-0.6B（模型的名字），然后使用本地路径。</p>
-]]></content><link href="https://github.com/ruheyun/yc-blog/issues/10"/><category term="笔记"/><published>2026-05-27T03:07:27+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/9</id><title>每日问答</title><updated>2026-06-14T11:36:12.800796+00:00</updated><content type="html"><![CDATA[<pre><code>【角色设定】我是一名人工智能领域的硕士研究生，研究方向涵盖生成模型与数据安全。
+]]></content><link href="https://github.com/ruheyun/yc-blog/issues/10"/><category term="笔记"/><published>2026-05-27T03:07:27+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/9</id><title>每日问答</title><updated>2026-06-21T08:58:36.338528+00:00</updated><content type="html"><![CDATA[<pre><code>【角色设定】我是一名人工智能领域的硕士研究生，研究方向涵盖生成模型与数据安全。
 
 【任务请求】请您以专业评审的角度，向我提出一个具有挑战性的问题，问题范围限定在以下领域：
 - 人工智能基础理论
@@ -75,7 +75,7 @@ AI答：长尾样本在少数 Batch 中产生的微弱梯度流，其信噪比�
 请结合你的研究方向，回答以下问题：<br>
 从数据安全的角度来看，这种基于对抗扰动的“主动式投毒”防御方案，在面对大模型时代的实际应用时，存在哪些潜在的“安全脆弱性”（Vulnerability）或逻辑漏洞？如果攻击者（即未经授权的数据抓取与训练方）想要破除这种防御，有哪些可能的技术路径？</p>
 </blockquote>
-]]></content><link href="https://github.com/ruheyun/yc-blog/issues/9"/><category term="笔记"/><published>2026-05-21T05:50:40+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/8</id><title>概率分布差异的衡量方法</title><updated>2026-06-14T11:36:12.917538+00:00</updated><content type="html"><![CDATA[<p>常用的衡量两个概率分布 P，Q 的距离或差异方法。</p>
+]]></content><link href="https://github.com/ruheyun/yc-blog/issues/9"/><category term="笔记"/><published>2026-05-21T05:50:40+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/8</id><title>概率分布差异的衡量方法</title><updated>2026-06-21T08:58:36.484444+00:00</updated><content type="html"><![CDATA[<p>常用的衡量两个概率分布 P，Q 的距离或差异方法。</p>
 <h2>Total Variation Distance</h2>
 <p>总变差距离：两个分布曲线之间‘面积差’的一半。缺点：高维时难以估计。</p>
 <p>连续：</p>
@@ -105,7 +105,7 @@ AI答：长尾样本在少数 Batch 中产生的微弱梯度流，其信噪比�
 <h2>Mahalanobis Distance</h2>
 <p>马氏距离：考虑协方差后的‘真实欧式距离’。</p>
 <p>$$d_M(x,y) = \sqrt{(x - y)^T \Sigma^{-1} (x - y)}$$</p>
-]]></content><link href="https://github.com/ruheyun/yc-blog/issues/8"/><category term="笔记"/><published>2026-05-17T12:09:36+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/7</id><title>Less Random, More Private: What is the Optimal Subsampling  Scheme for DP-SGD?</title><updated>2026-06-14T11:36:13.054076+00:00</updated><content type="html"><![CDATA[<h2>0.0.作者信息</h2>
+]]></content><link href="https://github.com/ruheyun/yc-blog/issues/8"/><category term="笔记"/><published>2026-05-17T12:09:36+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/7</id><title>Less Random, More Private: What is the Optimal Subsampling  Scheme for DP-SGD?</title><updated>2026-06-21T08:58:36.626395+00:00</updated><content type="html"><![CDATA[<h2>0.0.作者信息</h2>
 <p>Andy Dong （Stanford University）、 Ayfer Ozgur （Stanford University）</p>
 <h2>0.1.名词解释</h2>
 <p>independent-example mechanisms：每个样本的“是否参与每次训练迭代”的采样过程，是彼此独立生成的。</p>
@@ -198,11 +198,11 @@ AI答：长尾样本在少数 Batch 中产生的微弱梯度流，其信噪比�
 <p>第二项优化：一阶噪声的不变性。 由采样空间 $\parallel x \parallel^2 = k$ ，因此内积期望为0，方差固定为 k，不会随着 P 改变。</p>
 <p>第三项优化：最大化熵。最后一项的期望为 P 的熵的相反数，因此要最小化第三项，等于最大化 P 的熵，由于BIS是结构化的，因此在该项上是次优的。</p>
 <p>因此以往的直觉：越随机，越能增强隐私，是强调了第三项的直觉。但是以上分析可知，第一项中样本的参与方差才是主导项。所以在 $\sigma \rightarrow 0$ 时，样本参与方差为0的BIS要优于泊松采样。</p>
-]]></content><link href="https://github.com/ruheyun/yc-blog/issues/7"/><category term="DP"/><published>2026-05-13T00:52:21+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/6</id><title>工具类</title><updated>2026-06-14T11:36:13.182272+00:00</updated><content type="html"><![CDATA[<h2>图片处理</h2>
+]]></content><link href="https://github.com/ruheyun/yc-blog/issues/7"/><category term="DP"/><published>2026-05-13T00:52:21+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/6</id><title>工具类</title><updated>2026-06-21T08:58:36.769574+00:00</updated><content type="html"><![CDATA[<h2>图片处理</h2>
 <p><a href="https://www.iloveimg.com/zh-cn">iLoveIMG</a></p>
 <p><a href="https://tinify.cn/">TinyPNG</a></p>
 <p>Windows 自带照片</p>
-]]></content><link href="https://github.com/ruheyun/yc-blog/issues/6"/><category term="分享"/><published>2026-05-12T15:39:13+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/5</id><title>学习类</title><updated>2026-06-14T11:36:13.288357+00:00</updated><content type="html"><![CDATA[<h2>论文检索</h2>
+]]></content><link href="https://github.com/ruheyun/yc-blog/issues/6"/><category term="分享"/><published>2026-05-12T15:39:13+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/5</id><title>学习类</title><updated>2026-06-21T08:58:36.901023+00:00</updated><content type="html"><![CDATA[<h2>论文检索</h2>
 <p><a href="https://arxiv.org">arXiv - Preprint Repository</a></p>
 <p><a href="https://dblp.org">dblp - Computer Science Bibliography</a></p>
 <p><a href="https://scholar.google.com">Google Scholar - Academic Search Engine</a></p>
@@ -217,12 +217,14 @@ AI答：长尾样本在少数 Batch 中产生的微弱梯度流，其信噪比�
 <p><a href="https://algo.itcharge.cn/">算法通关手册</a>：一本系统讲解算法与数据结构、涵盖 LeetCode 题解的中文学习手册</p>
 <p><a href="https://huggingface.co/">HuggingFace</a></p>
 <p><a href="https://www.kaggle.com/">Kaggle</a></p>
-]]></content><link href="https://github.com/ruheyun/yc-blog/issues/5"/><category term="分享"/><published>2026-05-12T15:26:09+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/4</id><title>About</title><updated>2026-06-14T11:36:13.404185+00:00</updated><content type="html"><![CDATA[<h2>关于网站</h2>
+<p><a href="https://www.cs.usfca.edu/~galles/visualization/Algorithms.html">数据结构可视化1</a></p>
+<p><a href="https://visualgo.net/zh">数据结构可视化2</a></p>
+]]></content><link href="https://github.com/ruheyun/yc-blog/issues/5"/><category term="分享"/><published>2026-05-12T15:26:09+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/4</id><title>About</title><updated>2026-06-21T08:58:37.047054+00:00</updated><content type="html"><![CDATA[<h2>关于网站</h2>
 <blockquote>
 <p>本仓库 Fork 自 <a href="https://github.com/yihong0618/gitblog">yihong0618/gitblog</a>，一个基于 GitHub Issues 和 Actions 构建的个人博客系统。
 🙏 感谢 @yihong0618 打造的优秀项目！</p>
 </blockquote>
-]]></content><link href="https://github.com/ruheyun/yc-blog/issues/4"/><category term="About"/><published>2026-05-12T13:11:57+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/3</id><title>2026目标</title><updated>2026-06-14T11:36:13.513571+00:00</updated><content type="html"><![CDATA[<h2>2026总目标</h2>
+]]></content><link href="https://github.com/ruheyun/yc-blog/issues/4"/><category term="About"/><published>2026-05-12T13:11:57+00:00</published></entry><entry><id>https://github.com/ruheyun/yc-blog/issues/3</id><title>2026目标</title><updated>2026-06-21T08:58:37.181337+00:00</updated><content type="html"><![CDATA[<h2>2026总目标</h2>
 <ul>
 <li>至少看100篇论文</li>
 <li>完成小论文，并投稿</li>
